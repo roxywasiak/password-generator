@@ -6,15 +6,24 @@ const generatePassword = () => {
   /*
    * All your code goes here to generate a password
    */
-};
+  // get the password length 
+  const getPasswordLength = {} => {};
 
-// Write password to the #password input
-const writePassword = () => {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
+  //get the password criteria this is were the objects array is
+  const getPasswordCriteria = {} => {};
 
-  passwordText.value = password;
-};
+  //create the random password
+  const createRandomPassword = {} => {};
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+ // Write password to the #password input
+  const writePassword = () => {
+    const password = generatePassword();
+    const passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+  };
+
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
+
