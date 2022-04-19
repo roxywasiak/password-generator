@@ -8,55 +8,113 @@ const generatePassword = () => {
    */
   // get the password length
   const passwordLength = prompt("How long would you like your password?");
+  console.log(passwordLength);
   //storing the answer from prompt into passwordLength then getting the string and converting it to a number stored in passwordLengthNum and then returning it.
   const passwordLengthNum = parseInt(passwordLength, 10);
-  if(passwordLengthNum >=8 && <=128) {
-  
+  if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
+    console.log(passwordLengthNum);
   } else {
-    alert = ("please enter a password length");
+    alert("please enter a password length");
   }
 
-  
- 
-
   //if user input is valid go to the last branch where you convert to number
-  const isValidInput = (passwordLengthNum) => {};
-  //The questions function
-  const getCriteria = (criteria) => {
-  //return criteria object with three keys
-  //object array where the user will pick at least one category to be true otherwise alert error
-  //will use display.items, display.category, display.text.
-  const criteria = [
-  {
-    category: "lowerCase",
-    items: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q","r", "s", "t", "u","v", "w", "x", "y", "z",],
-    text: "Would you like to include the category of lowercase?",
-  },
+  const isValidInput = (passwordLengthNum) => {
+    //The questions function
+    const getCriteria = items.map((criteria) => {
+      if (criteria === "lowercase" && criteria === "numeric") {
+        return item.category;
+      }
+    });
+    //need to return two of my true
+    //return criteria object with three keys
+    //object array where the user will pick at least one category to be true otherwise alert error
+    //will use display.items, display.category, display.text.
+    const criteria = [
+      {
+        category: "lowerCase",
+        items: [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+        ],
+        text: "Would you like to include the category of lowercase?",
+      },
 
-  {
-    category: "upperCase",
-    items: [ "A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O","P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-    text: "Would you like to include the category of uppercase?",
-  },
+      {
+        category: "upperCase",
+        items: [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+        ],
+        text: "Would you like to include the category of uppercase?",
+      },
 
-  {
-    category: "numeric",
-    items: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-    text: "Would you like to include the category of numeric?",
-  },
+      {
+        category: "numeric",
+        items: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+        text: "Would you like to include the category of numeric?",
+      },
 
-  {
-    category: "specialCharacters",
-    items: [
-      "!”,“#”, “$”, “%”, “&”, “‘”, “(”,“), “*”, “+”, “,”, “-”, “.”, “/”, “:”, “;”, ” < “, “=”, ” > “, ” ? “,“@”,“[”, “\\“, “]”, ” ^ “, “_”,  “`”, “{”,  “|”, “}”  “~",
-    ],
-    text: "Would you like the category of specialCharacters?",
-  },
-]; // end of my array objects list
+      {
+        category: "specialCharacters",
+        items: [
+          "!”,“#”, “$”, “%”, “&”, “‘”, “(”,“), “*”, “+”, “,”, “-”, “.”, “/”, “:”, “;”, ” < “, “=”, ” > “, ” ? “,“@”,“[”, “\\“, “]”, ” ^ “, “_”,  “`”, “{”,  “|”, “}”  “~",
+        ],
+        text: "Would you like the category of specialCharacters?",
+      },
+    ]; // end of my array objects list
   };
 
   const chosenCriteria = (validCriteria) => {};
   //the results function will display what criteria user has chosen
+  //this is where i want to push my chosen criteria into a new array
 
   //the questions
   const validCriteria = getCriteria(criteria);
