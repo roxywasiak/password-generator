@@ -18,7 +18,6 @@ const generatePassword = () => {
   if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
     //please ask the user to select their criteria eg uppercase/lowercase etc
     const lowercase = confirm("Would you like to include lowercase?");
-
     //validating each confirm
     const uppercase = confirm("Would you like to include uppercase?");
     const numbers = confirm("Would you like to include numbers?");
@@ -98,8 +97,7 @@ const generatePassword = () => {
   }
 };
 
-
-//object array 
+//object array
 const criteria = [
   {
     category: "lowerCase",
@@ -182,13 +180,24 @@ const criteria = [
   },
 ]; // end of my array objects list
 
-//get a random password 
-const getRandomPassword = (criteria, passwordLength) =>{
-for(let i = 0; i < passwordLength; i+=1) {
-  //select random characters from the array
-criteria[];
-}
-return;
+//get password criteria function
+
+//get a random password
+const getRandomPassword = (criteria, passwordLengthNum) => {
+  const passwordArray = [];
+  for (let i = 0; i < passwordLengthNum; i += 1) {
+    //select random characters from the array
+    const randomCategoryIndex = Math.floor(Math.random() * criteria.length);
+
+    // get random category
+    const randomCategory = criteria[randomCategoryIndex];
+    //get random index
+    const randomIndex = Math.floor(Math.random() * randomCategory.length);
+    //get random character
+    const randomCharacter = randomCategory.charAt(randomIndex);
+    passwordArray.push(randomCharacter);
+  }
+  return passwordArray.join("");
 };
 // Write password to the #password input
 const writePassword = () => {
