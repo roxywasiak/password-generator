@@ -19,6 +19,15 @@ const generatePassword = () => {
   //verifying the condition
   if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
     console.log("success");
+    //please ask the user to select their criteria eg uppercase/lowercase etc
+    const lowercase = confirm("Would you like to include lowercase?");
+    console.log("you have chosen lowercase");
+    const uppercase = confirm("Would you like to include uppercase?");
+    console.log("uppercase");
+    const numbers = confirm("Would you like to include numbers?");
+    console.log("numbers yay");
+    const special = confirm("Would you like to include spacial characters?");
+    console.log("spacial");
   } else {
     alert("please enter a valid password length");
   }
