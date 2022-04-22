@@ -2,7 +2,7 @@
 const generateBtn = document.querySelector("#generate");
 
 // main function to generate the random password
-const generatePassword = () => {
+const getPasswordLength = () => {
   /*
    * All your code goes here to generate a password
    */
@@ -14,12 +14,13 @@ const generatePassword = () => {
   const passwordLengthNum = parseInt(passwordLength, 10);
   //verifying the condition
   if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
+    return passwordLengthNum;
   } else {
     alert("please enter a valid password length with valid criteria");
   }
 };
 
-const getPasswordCriteria = passwordCriteria();
+// const getPasswordCriteria = passwordCriteria
 //Password criteria function
 const passwordCriteria = () => {
   //please ask the user to select their criteria eg uppercase/lowercase etc
@@ -45,85 +46,6 @@ const passwordCriteria = () => {
   return getCriteria;
 };
 
-// const criteria = [
-//   ({
-//     category: "lowerCase",
-//     items: [
-//       "a",
-//       "b",
-//       "c",
-//       "d",
-//       "e",
-//       "f",
-//       "g",
-//       "h",
-//       "i",
-//       "j",
-//       "k",
-//       "l",
-//       "m",
-//       "n",
-//       "o",
-//       "p",
-//       "q",
-//       "r",
-//       "s",
-//       "t",
-//       "u",
-//       "v",
-//       "w",
-//       "x",
-//       "y",
-//       "z",
-//     ],
-//     text: "Would you like to include the category of lowercase?",
-//   },
-//   {
-//     category: "upperCase",
-//     items: [
-//       "A",
-//       "B",
-//       "C",
-//       "D",
-//       "E",
-//       "F",
-//       "G",
-//       "H",
-//       "I",
-//       "J",
-//       "K",
-//       "L",
-//       "M",
-//       "N",
-//       "O",
-//       "P",
-//       "Q",
-//       "R",
-//       "S",
-//       "T",
-//       "U",
-//       "V",
-//       "W",
-//       "X",
-//       "Y",
-//       "Z",
-//     ],
-//     text: "Would you like to include the category of uppercase?",
-//   },
-//   {
-//     category: "numeric",
-//     items: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-//     text: "Would you like to include the category of numeric?",
-//   },
-//   {
-//     category: "specialCharacters",
-//     items: [
-//       "!”,“#”, “$”, “%”, “&”, “‘”, “(”,“), “*”, “+”, “,”, “-”, “.”, “/”, “:”, “;”, ” < “, “=”, ” > “, ” ? “,“@”,“[”, “\\“, “]”, ” ^ “, “_”,  “`”, “{”,  “|”, “}”  “~",
-//     ],
-//     text: "Would you like the category of specialCharacters?",
-//   }),
-// ]; // end of my array objects list
-
 // //get password criteria function
 
 //get a random password
@@ -141,6 +63,13 @@ const getRandomPassword = (passwordLength, getCriteria) => {
     passwordArray.push(randomCharacter);
   }
   return passwordArray.join("");
+};
+
+const generatePassword = () => {
+  const passwordLengthNum = getPasswordLength();
+  const getCriteria = passwordCriteria();
+  const randomPassword = getRandomPassword(passwordLengthNum, getCriteria);
+  return randomPassword;
 };
 
 // Write password to the #password input
