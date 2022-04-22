@@ -20,16 +20,15 @@ const getPasswordLength = () => {
   }
 };
 
-// const getPasswordCriteria = passwordCriteria
 //Password criteria function
 const passwordCriteria = () => {
-  //please ask the user to select their criteria eg uppercase/lowercase etc
+  //make user to confirm their criteria
   const lowercase = confirm("Would you like to include lowercase?");
   //validating each confirm
   const uppercase = confirm("Would you like to include uppercase?");
   const numbers = confirm("Would you like to include numbers?");
   const special = confirm("Would you like to include spacial characters?");
-
+  //array which is empty
   const getCriteria = [];
   if (lowercase) {
     getCriteria.push("abcdefghijklmnopqrstuvwxyz");
@@ -46,9 +45,7 @@ const passwordCriteria = () => {
   return getCriteria;
 };
 
-// //get password criteria function
-
-//get a random password
+//get the random items to be stored in new array
 const getRandomPassword = (passwordLength, getCriteria) => {
   const passwordArray = [];
   for (let i = 0; i < passwordLength; i += 1) {
@@ -64,7 +61,7 @@ const getRandomPassword = (passwordLength, getCriteria) => {
   }
   return passwordArray.join("");
 };
-
+// make the new random password to display
 const generatePassword = () => {
   const passwordLengthNum = getPasswordLength();
   const getCriteria = passwordCriteria();
