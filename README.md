@@ -7,7 +7,6 @@ The password must generate a new password which randomly selects from lowercase,
 
 The user is prompted for certain password criteria and alerted if their choices do not meet the requirements.
 The random password generated will be the selected criteria.
-
 The random password will be displayed in the box area.
 
 # Languages Used
