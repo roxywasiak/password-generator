@@ -12,12 +12,8 @@ const getPasswordLength = () => {
   );
   //storing the answer from prompt into passwordLength then getting the string and converting it to a number stored in passwordLengthNum and then returning it.
   const passwordLengthNum = parseInt(passwordLength, 10);
+  return passwordLengthNum;
   //verifying the condition
-  if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
-    return passwordLengthNum;
-  } else {
-    alert("please enter a valid password length with valid criteria");
-  }
 };
 
 //Password criteria function
@@ -64,9 +60,14 @@ const getRandomPassword = (passwordLength, getCriteria) => {
 // make the new random password to display
 const generatePassword = () => {
   const passwordLengthNum = getPasswordLength();
-  const getCriteria = passwordCriteria();
-  const randomPassword = getRandomPassword(passwordLengthNum, getCriteria);
-  return randomPassword;
+  if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
+    const getCriteria = passwordCriteria();
+    const randomPassword = getRandomPassword(passwordLengthNum, getCriteria);
+    return randomPassword;
+  } else {
+    alert("please enter a valid password length with valid criteria");
+    return "";
+  }
 };
 
 // Write password to the #password input
